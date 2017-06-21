@@ -73,6 +73,7 @@ class AdministratorAdmin extends AbstractAdmin
                     'ROLE_ADMIN_TON_MACRON' => 'ROLE_ADMIN_TON_MACRON',
                     'ROLE_ADMIN_LEGISLATIVES' => 'ROLE_ADMIN_LEGISLATIVES',
                     'ROLE_ADMIN_ADHERENTS' => 'ROLE_ADMIN_ADHERENTS',
+                    'ROLE_ADMIN_SUMMARY' => 'ROLE_ADMIN_SUMMARY',
                     'ROLE_ADMIN_COMMITTEES' => 'ROLE_ADMIN_COMMITTEES',
                     'ROLE_ADMIN_EVENTS' => 'ROLE_ADMIN_EVENTS',
                     'ROLE_ADMIN_PROCURATIONS' => 'ROLE_ADMIN_PROCURATIONS',
@@ -129,7 +130,7 @@ class AdministratorAdmin extends AbstractAdmin
                 'virtual_field' => true,
                 'actions' => [
                     'qrcode' => [
-                        'template' => 'admin/admin_qrcode.html.twig',
+                        'template' => 'admin/admin/list_qrcode.html.twig',
                     ],
                     'edit' => [],
                     'delete' => [],
