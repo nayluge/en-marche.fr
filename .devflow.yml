@@ -1,0 +1,43 @@
+env:
+  custom:
+    DATABASE_HOST: mysql
+
+stack:
+  nginx:
+    document_root: web
+    index: app.php
+
+  php:
+    version: 7.1
+    modules:
+      - apcu
+      - bcmath
+      - curl
+      - imagick
+      - intl
+      - mbstring
+      - mcrypt
+      - pdo_mysql
+      - redis
+      - zip
+    deployment:
+      install:
+        - composer install --prefer-dist --no-interaction --optimize-autoloader
+        - php bin/console doctrine:schema:update --force
+        - php bin/console doctrine:fixtures:load --no-interaction
+
+  # @todo actually we use MariaDB 10.1
+  mysql:
+    version: 5.7
+    user: root
+    password: root
+    databases:
+      - enmarche
+
+  redis:
+    version: 3.2
+
+  rabbitmq:
+    version: 3.6
+
+  mailhog: ~
