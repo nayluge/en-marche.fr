@@ -5,7 +5,7 @@ env:
 stack:
   nginx:
     document_root: web
-    index: app.php
+    index: index.php
 
   php:
     version: 7.1
